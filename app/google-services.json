@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "614857851197",
+    "firebase_url": "https://sliit-weatherapp.firebaseio.com",
+    "project_id": "sliit-weatherapp",
+    "storage_bucket": "sliit-weatherapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:614857851197:android:8909ab8120657caf7b0554",
+        "android_client_info": {
+          "package_name": "xyz.nmasnadithya.openweather"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "614857851197-74ji9nfomo5a9n3up8gmhn4b1damt6i0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "xyz.nmasnadithya.openweather",
+            "certificate_hash": "7d6c35f6a4d3afc55f4c981d96f683e8728a68b3"
+          }
+        },
+        {
+          "client_id": "614857851197-7p659bbdu6rtvashp6sfcc9c2btapq2t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "xyz.nmasnadithya.openweather",
+            "certificate_hash": "288b786fdcd26d5200f47b1bee48c9c0f63df6e6"
+          }
+        },
+        {
+          "client_id": "614857851197-hn1evcsfnbj0o9tco6a4ne0rgcscrl35.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3oil6F_FEqIwudMN0uUnpaU_Gtm0P6hg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "614857851197-hn1evcsfnbj0o9tco6a4ne0rgcscrl35.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

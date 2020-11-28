@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="xyz.nmasnadithya.openweather">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -8,14 +14,98 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.OpenWeather">
-        <activity android:name=".MainActivity">
+        android:theme="@style/AppTheme.DarkTheme_NoActionBar">
+        <activity
+            android:name=".ui.SplashActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.DarkTheme_NoActionBar" />
+
+        <activity
+            android:name=".ui.cities.CitiesActivity"
+            android:theme="@style/AppTheme.DarkTheme_NoActionBar" />
+
+        <!--
+             The API key for Google Maps-based APIs is defined as enqueuePeriodic string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need enqueuePeriodic different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".ui.setting.SettingsActivity"
+            android:theme="@style/AppTheme.DarkTheme" />
+
+        <activity
+            android:name=".ui.addcity.AddCityActivity"
+            android:theme="@style/AppTheme.DarkTheme_NoActionBar" />
+
+        <activity
+            android:name=".ui.main.fivedayforecast.DailyDetailActivity"
+            android:theme="@style/AppTheme.DarkTheme_NoActionBar" />
+
+        <receiver
+            android:name=".CancelNotificationReceiver"
+            android:exported="false">
+
+        </receiver>
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <!-- This entry makes ExampleLoggerInitializer discoverable. -->
+
+            <meta-data
+                android:name="xyz.nmasnadithya.openweather.initializer.TimberInitializer"
+                android:value="androidx.startup" />
+
+            <meta-data
+                android:name="xyz.nmasnadithya.openweather.initializer.KoinInitializer"
+                android:value="androidx.startup" />
+
+            <meta-data
+                android:name="xyz.nmasnadithya.openweather.initializer.NotificationInitializer"
+                android:value="androidx.startup" />
+
+            <meta-data
+                android:name="xyz.nmasnadithya.openweather.initializer.PlacesApiInitializer"
+                android:value="androidx.startup" />
+
+            <meta-data
+                android:name="xyz.nmasnadithya.openweather.initializer.RxJavaPluginsInitializer"
+                android:value="androidx.startup" />
+
+            <meta-data
+                android:name="xyz.nmasnadithya.openweather.initializer.WorkManagerInitializer"
+                android:value="androidx.startup" />
+        </provider>
+
+        <provider
+            android:name="androidx.work.impl.WorkManagerInitializer"
+            android:authorities="${applicationId}.workmanager-init"
+            android:exported="false"
+            tools:node="remove" />
     </application>
 
 </manifest>
